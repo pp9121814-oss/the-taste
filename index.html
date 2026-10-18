@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,72 +10,61 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:radial-gradient(ellipse at top,#352216 0%,var(--bg) 55%);color:var(--cream);font-family:"Trebuchet MS",Arial,sans-serif}
-button,input,textarea,select{font:inherit}
-button{cursor:pointer}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
 header{position:relative;overflow:hidden;text-align:center;padding:48px 18px 38px;background:linear-gradient(180deg,#17100b,#21160e 65%,#100d09);border-bottom:1px solid #9a713b}
 .brand{font-family:Georgia,serif;font-size:clamp(40px,8vw,76px);font-weight:bold;letter-spacing:-2px;color:#f7e5c3;text-shadow:0 5px 30px #d7ad6820}
 .subtitle{margin-top:12px;color:var(--gold);letter-spacing:7px;font-size:12px}
 header p{color:var(--muted);letter-spacing:1px}
 .hero-note{display:none;max-width:700px;margin:18px auto 0;padding:10px 14px;border:1px solid #d7ad6877;border-radius:30px;color:#ffe6b2;background:#d7ad6812}
 body.diwali .hero-note{display:block}
-nav{display:flex;gap:9px;overflow-x:auto;padding:13px;background:#120e0aee;backdrop-filter:blur(16px);position:sticky;top:0;z-index:5;border-bottom:1px solid #453321}
-nav a{flex-shrink:0;text-decoration:none;color:var(--cream);padding:10px 14px;border:1px solid #57422b;border-radius:30px;font-size:13px;transition:.25s}
-nav a:hover{background:var(--gold);color:#17100b;transform:translateY(-2px)}
+nav{display:flex;gap:9px;overflow-x:auto;padding:13px;background:#120e0aee;backdrop-filter:blur(16px);position:sticky;top:0;z-index:5;border-bottom:1px solid #453321;scrollbar-width:thin}
+nav button{flex-shrink:0;text-decoration:none;color:var(--cream);padding:10px 14px;border:1px solid #57422b;border-radius:30px;font-size:13px;background:#17110c;white-space:nowrap}
+nav button:hover,nav button.active{background:var(--gold);color:#17100b;border-color:var(--gold)}
 .container{max-width:1200px;margin:auto;padding:28px 18px 110px}
 .section-title{text-align:center;color:#f2d5a1;font-family:Georgia,serif;font-size:clamp(29px,5vw,42px);margin:22px 0 6px}
 .intro{text-align:center;color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:24px}
-.search{display:block;width:100%;max-width:620px;margin:20px auto;padding:16px 22px;border:1px solid #6a5033;border-radius:30px;background:#211911;color:white;outline:none;transition:.25s}
+.search{display:block;width:100%;max-width:620px;margin:20px auto;padding:16px 22px;border:1px solid #6a5033;border-radius:30px;background:#211911;color:white;outline:none;transition:none}
 .search:focus{border-color:var(--gold);box-shadow:0 0 22px #d7ad681a}
 .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:22px}
-.menu-card{background:linear-gradient(145deg,#282017,#17120d);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 35px #0004;transition:transform .3s,border-color .3s;animation:reveal .5s ease both}
+.menu-card{background:linear-gradient(145deg,#282017,#17120d);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 35px #0004;transition:none;animation:none}
 .menu-card:hover{transform:translateY(-4px);border-color:#b68b50}
 .menu-heading{background:linear-gradient(100deg,#66352a,#392019);color:#f8dfb3;padding:17px;font-family:Georgia,serif;font-size:21px;border-bottom:1px solid #9c6742}
-.menu-item{padding:15px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #4a3021;transition:background .2s}
-.menu-item:last-child{border-bottom:0}
-.menu-item:hover{background:#ffffff06}
+.menu-item{padding:15px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #4a3021;transition:none}
+.menu-item:last-child{border-bottom:0}.menu-item:hover{background:#ffffff06}
 .item-name{font-size:14px;font-weight:600;line-height:1.6;color:#f6ead7}
 .item-price{color:#e6bf7e;font-weight:bold;font-size:15px;white-space:nowrap}
-.item-controls{display:flex;align-items:center;gap:8px;margin-top:7px;flex-wrap:wrap}
+.item-controls{display:flex;align-items:center;gap:12px;margin-top:10px;flex-wrap:wrap}
+.item-controls .add-btn{margin-left:8px;min-width:78px;padding:10px 15px}
+.item-price{margin-right:3px}
+.menu-item{align-items:flex-start}
+.menu-item>div{width:100%}
 .item-controls select{background:#21150e;color:var(--cream);border:1px solid #75502e;border-radius:8px;padding:7px}
-.add-btn{border:0;border-radius:8px;padding:9px 14px;background:linear-gradient(135deg,#f1d29a,#c99a50);color:#21150e;font-weight:bold;transition:transform .2s,filter .2s}
+.add-btn{border:0;border-radius:8px;padding:9px 14px;background:linear-gradient(135deg,#f1d29a,#c99a50);color:#21150e;font-weight:bold;transition:none}
 .add-btn:hover{transform:scale(1.04);filter:brightness(1.1)}
 .empty{color:var(--muted);text-align:center;padding:25px}
-.cart-fab{position:fixed;right:16px;bottom:17px;z-index:8;background:linear-gradient(135deg,#f1d29a,#c99a50);color:#21150e;border:1px solid #f5dfb6;border-radius:30px;padding:15px 20px;font-weight:bold;box-shadow:0 8px 30px #0008;transition:transform .2s}
+.cart-fab{position:fixed;right:16px;bottom:17px;z-index:8;background:linear-gradient(135deg,#f1d29a,#c99a50);color:#21150e;border:1px solid #f5dfb6;border-radius:30px;padding:15px 20px;font-weight:bold;box-shadow:0 8px 30px #0008;transition:none}
 .cart-fab:hover{transform:translateY(-3px)}
 .cart-panel{display:none;position:fixed;inset:0;z-index:10;background:#000b;align-items:flex-end;justify-content:center}
 .cart-panel.open{display:flex}
 .cart{background:linear-gradient(145deg,#261b12,#120e0a);border:1px solid var(--gold);border-radius:18px 18px 0 0;width:100%;max-width:650px;max-height:90vh;overflow:auto;padding:22px;box-shadow:0 -10px 50px #0008}
-.cart-top{display:flex;justify-content:space-between;align-items:center}
-.close-btn{background:none;color:white;border:0;font-size:27px}
+.cart-top{display:flex;justify-content:space-between;align-items:center}.close-btn{background:none;color:white;border:0;font-size:27px}
 .cart-row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #493020}
-.qty{display:flex;gap:9px;align-items:center}
-.qty button{border:1px solid #977042;background:#362318;color:white;border-radius:5px;padding:4px 9px}
-.field{margin-top:15px}
-.field label{display:block;color:var(--gold);font-size:13px;margin-bottom:7px}
+.qty{display:flex;gap:9px;align-items:center}.qty button{border:1px solid #977042;background:#362318;color:white;border-radius:5px;padding:4px 9px}
+.field{margin-top:15px}.field label{display:block;color:var(--gold);font-size:13px;margin-bottom:7px}
 .field input,.field textarea{width:100%;padding:12px;border-radius:7px;border:1px solid #77512e;background:#302016;color:white}
-.field textarea{resize:vertical}
-.total{font-size:23px;color:var(--gold);font-weight:bold;margin:20px 0}
+.field textarea{resize:vertical}.total{font-size:23px;color:var(--gold);font-weight:bold;margin:20px 0}
 .checkout{width:100%;padding:15px;border:0;border-radius:10px;background:linear-gradient(135deg,#f1d29a,#c99a50);color:#21150e;font-weight:bold}
-.checkout:hover{filter:brightness(1.1)}
-.clear-btn{background:none;color:#e6b7a4;border:0;padding:12px}
+.checkout:hover{filter:brightness(1.1)}.clear-btn{background:none;color:#e6b7a4;border:0;padding:12px}
 footer{border-top:1px solid #76542f;text-align:center;padding:30px 15px;color:var(--muted);font-size:13px;background:#100c08;line-height:1.9}
 footer strong{color:var(--gold);letter-spacing:2px}
 .geo-box{max-width:760px;margin:18px auto 24px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(135deg,#251b12,#17110c);border:1px solid #8a673c;border-radius:14px;box-shadow:0 8px 24px #0003}
-.geo-box strong{color:#f1d29a}
-.geo-box p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
-@keyframes reveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-#diwaliLayer{display:none;position:fixed;inset:0;pointer-events:none;z-index:4;overflow:hidden}
-body.diwali #diwaliLayer{display:block}
-.diya{position:absolute;bottom:0;width:42px;height:24px;border-radius:0 0 24px 24px;background:linear-gradient(#f8cf75,#a84b1d);box-shadow:0 0 18px #ffb33d88;animation:diyaGlow 2.4s infinite alternate}
-.diya:before{content:"";position:absolute;left:17px;top:-18px;width:9px;height:20px;background:radial-gradient(ellipse,#fff9c9 0%,#ffb02e 50%,transparent 75%);border-radius:50%;filter:drop-shadow(0 0 8px #ffb52e)}
-.diya.left{left:14px}
-.diya.right{right:14px}
-.sparkle{position:absolute;top:-15px;color:#ffdc91;font-size:15px;opacity:.8;animation:fall linear infinite;text-shadow:0 0 10px #ffb52e}
-@keyframes fall{to{transform:translateY(110vh) rotate(300deg);opacity:0}}
-@keyframes diyaGlow{from{filter:brightness(.9)}to{filter:brightness(1.35);box-shadow:0 0 28px #ffb33daa}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+.geo-box strong{color:#f1d29a}.geo-box p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
+.geo-box.verified{border-color:#659a70}.geo-box.blocked{border-color:#a85a4d}.geo-box.verified strong{color:#a8d5a8}
+to{opacity:1;transform:translateY(0)}}
+}
 @media(max-width:600px){
   .geo-box{align-items:flex-start;flex-direction:column;margin:10px auto 14px;padding:12px}
+  .geo-box .add-btn{width:100%}
   header{padding:22px 12px 17px}
   .brand{font-size:clamp(34px,9vw,52px);letter-spacing:-1px}
   .subtitle{margin-top:8px;letter-spacing:4px}
@@ -88,76 +76,52 @@ body.diwali #diwaliLayer{display:block}
   .section-title{margin:12px 0 4px;font-size:30px}
   .intro{margin:0 0 12px;font-size:13px}
   .search{margin:12px auto;padding:13px 16px}
-  .menu-grid{gap:13px;min-height:120px}
-  .menu-card{border-radius:13px;align-self:start}
+  .menu-grid{gap:13px;min-height:120px}.menu-card{align-self:start}
+  .menu-card{border-radius:13px}
 }
 </style>
 </head>
 <body>
-
-<div id="diwaliLayer" aria-hidden="true">
-  <div class="diya left"></div>
-  <div class="diya right"></div>
-</div>
-
 <header>
   <div class="brand">The Taste Restro</div>
   <div class="subtitle">DIGITAL MENU</div>
   <p>Good Food · Great Taste · Happy Moments</p>
-  <div class="hero-note">🪔 ✨ Happy Diwali from The Taste Restro ✨ 🪔</div>
 </header>
 
-<nav>
-  <a href="#menu">All Menu</a>
-  <a href="#Tea">Tea & Coffee</a>
-  <a href="#Drinks">Drinks</a>
-  <a href="#Snacks">Snacks</a>
-  <a href="#Momos">Momos</a>
-  <a href="#MainCourse">Main Course</a>
-  <a href="#Rice">Rice & Biryani</a>
-  <a href="#Bread">Breads</a>
+<nav id="categoryNav" aria-label="Menu categories">
+  <button type="button" class="active" data-filter="all">All Menu</button>
+  <button type="button" data-filter="Tea">Tea</button><button type="button" data-filter="Coffee">Coffee</button>
+  <button type="button" data-filter="Drinks">Drinks</button><button type="button" data-filter="Shakes">Shakes</button>
+  <button type="button" data-filter="Snacks">Burger / Sandwich</button><button type="button" data-filter="Momos">Momos</button>
+  <button type="button" data-filter="Maggi">Maggi</button><button type="button" data-filter="Breakfast">Breakfast</button>
+  <button type="button" data-filter="Pakora">Pakora</button><button type="button" data-filter="Macroni">Macroni</button>
+  <button type="button" data-filter="Soup">Soup</button><button type="button" data-filter="Starter">Starter</button>
+  <button type="button" data-filter="Noodles">Noodles</button><button type="button" data-filter="Rice">Rice / Biryani</button>
+  <button type="button" data-filter="MainCourse">Veg Main Course</button><button type="button" data-filter="NonVeg">Non Veg Main Course</button>
+  <button type="button" data-filter="Bread">Roti / Naan</button><button type="button" data-filter="Salad">Salad / Papad</button>
+  <button type="button" data-filter="Dessert">Dessert</button><button type="button" data-filter="Manchurian">Manchurian</button>
 </nav>
 
 <main class="container" id="menu">
   <h2 class="section-title">Our Menu</h2>
   <p class="intro">Browse the full menu, add your favourites, and verify your location when you place an order.</p>
-
   <section class="geo-box" aria-live="polite">
-    <div>
-      <strong>📍 75m Restaurant Ordering Zone</strong>
-      <p id="geoStatus">Your location will be checked automatically when you place an order.</p>
-    </div>
+    <div><strong>📍 75m Restaurant Ordering Zone</strong>
+    <p id="geoStatus">Your location will be checked automatically when you place an order.</p></div>
     <span style="color:var(--gold);font-size:13px">75m ordering limit</span>
   </section>
-
   <input class="search" id="search" type="search" placeholder="Search food, e.g. Maggi, Paneer, Coffee..." aria-label="Search menu">
   <div class="menu-grid" id="menuGrid"></div>
 </main>
 
 <button class="cart-fab" onclick="openCart()">🛒 Your Order (<span id="cartCount">0</span>)</button>
-
 <div class="cart-panel" id="cartPanel" onclick="outsideClose(event)">
   <section class="cart">
-    <div class="cart-top">
-      <h2 style="color:var(--gold)">Your Order</h2>
-      <button class="close-btn" onclick="closeCart()" aria-label="Close cart">×</button>
-    </div>
-    <div id="cartItems"></div>
-    <div class="total">Total: ₹<span id="total">0</span></div>
-
-    <div class="field">
-      <label for="table">Table Number</label>
-      <input id="table" placeholder="e.g. Table 5">
-    </div>
-    <div class="field">
-      <label for="customer">Customer Name (optional)</label>
-      <input id="customer" placeholder="Enter your name">
-    </div>
-    <div class="field">
-      <label for="notes">Special Instructions (optional)</label>
-      <textarea id="notes" rows="3" placeholder="Less spicy, no onion..."></textarea>
-    </div>
-
+    <div class="cart-top"><h2 style="color:var(--gold)">Your Order</h2><button class="close-btn" onclick="closeCart()" aria-label="Close cart">×</button></div>
+    <div id="cartItems"></div><div class="total">Total: ₹<span id="total">0</span></div>
+    <div class="field"><label for="table">Table Number</label><input id="table" placeholder="e.g. Table 5"></div>
+    <div class="field"><label for="customer">Customer Name (optional)</label><input id="customer" placeholder="Enter your name"></div>
+    <div class="field"><label for="notes">Special Instructions (optional)</label><textarea id="notes" rows="3" placeholder="Less spicy, no onion..."></textarea></div>
     <button class="checkout" onclick="placeOrder()">PLACE ORDER</button>
     <button class="clear-btn" onclick="clearCart()">Clear Order</button>
   </section>
@@ -165,205 +129,121 @@ body.diwali #diwaliLayer{display:block}
 
 <footer>
   <h3 style="font-family:Georgia,serif;color:var(--cream)">The Taste Restro</h3>
-  <p>Fresh food, served with love.</p>
-  <p>Contact: 6002210776 · 9670715304</p>
+  <p>Fresh food, served with love.</p><p>Contact: 6002210776 · 9670715304</p>
   <p>© <span id="year"></span> The Taste Restro. All rights reserved.</p>
-  <p>Website & Digital Menu by <strong>WEBLYFT</strong></p>
-  <p>WEBSITES & DIGITAL MENUS</p>
+  <p>Website & Digital Menu by <strong>WEBLYFT</strong></p><p>WEBSITES & DIGITAL MENUS</p>
 </footer>
 
 <script>
 const menu = [
-  {name:"Tea",id:"Tea",items:[["Tea",30],["Black Tea",30],["Lemon Tea",30]]},
-  {name:"Coffee",id:"Coffee",items:[["Hot Coffee",70],["Black Coffee",50],["Cold Coffee",110],["Cold Coffee (With Ice Cream)",130]]},
-  {name:"Drinks",id:"Drinks",items:[["Fresh Lime Soda",60],["Cold Drink",70],["Lassi",70],["Badam Lassi",80]]},
-  {name:"Shakes",id:"Shakes",items:[["Mango Shake",110],["Oreo Shake",110],["Chocolate Shake",120],["Butter Scotch Shake",120]]},
-  {name:"Burger / Sandwich",id:"Snacks",items:[["Veg Burger",100],["Cheese Burger",120],["Veg Sandwich",90],["Veg Grilled Sandwich",120]]},
-  {name:"Momos",id:"Momos",items:[["Veg Momos",90],["Fried Momos",140],["Chilli Momos",160]]},
-  {name:"Maggi",id:"Maggi",items:[["Plain Maggi",40],["Vegetable Maggi",70],["Butter Maggi",80],["Egg Maggi",110],["Chicken Maggi",130]]},
-  {name:"Breakfast",id:"Breakfast",items:[["Allu Paratha",60],["Onion Paratha",70],["Allu Pyaz Paratha",70],["Bread Butter",60],["Mix Paatha",80],["Paneer Paratha",90],["Masala Omelette",70],["Bread Omelette",90]]},
-  {name:"Pakora",id:"Pakora",items:[["Allu Pakora",100],["Allu Pyaz Pakora",130],["Mix Pakora",160],["Paneer Pakora",190]]},
-  {name:"Macroni",id:"Macroni",items:[["Veg Macroni",140],["Veg Macroni (Extra Cheese)",160],["Chicken Macroni",180]]},
-  {name:"Soup",id:"Soup",items:[["Veg Soup",90],["Hot Manchow",100],["Chicken Soup",130]]},
-  {name:"Starter Veg",id:"StarterVeg",items:[["Spring Roll",120],["Chilly Potato",150],["Honey Chilly Potato",170],["French Fries",100],["Paneer Finger",170],["Chilly Paneer",230],["Chilly Mushroom",210],["Paneer Tikka",250],["Soya Chaap",200],["Peanut Chaat",180]]},
-  {name:"Starter Non Veg",id:"StarterNonVeg",items:[["Chicken Lollipop",230],["Chilly Chicken",220,300],["Chicken Pakora",200],["Fish Pakora",230],["Tandoori Chicken",260,370]]},
-  {name:"Noodles Veg & Non Veg",id:"Noodles",items:[["Veg Noodles",90],["Veg Hakka Noodles",150],["Veg Schezwan Noodles",160],["Veg Singapuri Noodles",170],["Egg Noodles",140],["Chicken Noodles",180]]},
-  {name:"Rice / Biryani",id:"Rice",items:[["Plain Rice",100],["Jeera Rice",120],["Veg Fried Rice",160],["Egg Fried Rice",170],["Chicken Fried Rice",190],["Veg Biryani",210],["Chicken Biryani",260]]},
-  {name:"Veg Main Course",id:"MainCourse",items:[["Kadhai Paneer",190,270],["Sahi Paneer",180,260],["Paneer Butter Masala",190,270],["Muttar Paneer",180,260],["Paneer Bhurji",220],["Dal Fry",150],["Dal Yellow Tadka",160],["Dal Makhni",220],["Mushroom Masala",220],["Mix Veg",210],["Allu Jeera",150],["Allu Gobhi Masala",180]]},
-  {name:"Non Veg Main Course",id:"NonVeg",items:[["Butter Chicken",270,370],["Kadhai Chicken",260,360],["Chicken Masala",230,350]]},
-  {name:"Tawa Roti / Tandoor Roti",id:"Bread",items:[["Tawa Roti",10],["Tawa Butter Roti",15],["Tandoori Roti",15],["Tandoori Butter Roti",20],["Butter Naan",40]]},
-  {name:"Salad / Papad",id:"Salad",items:[["Green Salad",70],["Papad (2 pcs)",40],["Mix Raita",80]]},
-  {name:"Dessert",id:"Dessert",items:[["Vanilla Ice Cream",50],["Butter Scotch",60]]},
-  {name:"Manchurian",id:"Manchurian",items:[["Veg Manchurian",150],["Non Veg Manchurian",180]]}
+{name:"Tea",id:"Tea",items:[["Tea",30],["Black Tea",30],["Lemon Tea",30]]},
+{name:"Coffee",id:"Coffee",items:[["Hot Coffee",70],["Black Coffee",50],["Cold Coffee",110],["Cold Coffee (With Ice Cream)",130]]},
+{name:"Drinks",id:"Drinks",items:[["Fresh Lime Soda",60],["Cold Drink",70],["Lassi",70],["Badam Lassi",80]]},
+{name:"Shakes",id:"Shakes",items:[["Mango Shake",110],["Oreo Shake",110],["Chocolate Shake",120],["Butter Scotch Shake",120]]},
+{name:"Burger / Sandwich",id:"Snacks",items:[["Veg Burger",100],["Cheese Burger",120],["Veg Sandwich",90],["Veg Grilled Sandwich",120]]},
+{name:"Momos",id:"Momos",items:[["Veg Momos",90],["Fried Momos",140],["Chilli Momos",160]]},
+{name:"Maggi",id:"Maggi",items:[["Plain Maggi",40],["Vegetable Maggi",70],["Butter Maggi",80],["Egg Maggi",110],["Chicken Maggi",130]]},
+{name:"Breakfast",id:"Breakfast",items:[["Allu Paratha",60],["Onion Paratha",70],["Allu Pyaz Paratha",70],["Bread Butter",60],["Mix Paatha",80],["Paneer Paratha",90],["Masala Omelette",70],["Bread Omelette",90]]},
+{name:"Pakora",id:"Pakora",items:[["Allu Pakora",100],["Allu Pyaz Pakora",130],["Mix Pakora",160],["Paneer Pakora",190]]},
+{name:"Macroni",id:"Macroni",items:[["Veg Macroni",140],["Veg Macroni (Extra Cheese)",160],["Chicken Macroni",180]]},
+{name:"Soup",id:"Soup",items:[["Veg Soup",90],["Hot Manchow",100],["Chicken Soup",130]]},
+{name:"Starter Veg",id:"StarterVeg",items:[["Spring Roll",120],["Chilly Potato",150],["Honey Chilly Potato",170],["French Fries",100],["Paneer Finger",170],["Chilly Paneer",230],["Chilly Mushroom",210],["Paneer Tikka",250],["Soya Chaap",200],["Peanut Chaat",180]]},
+{name:"Starter Non Veg",id:"StarterNonVeg",items:[["Chicken Lollipop",230],["Chilly Chicken",220,300],["Chicken Pakora",200],["Fish Pakora",230],["Tandoori Chicken",260,370]]},
+{name:"Noodles Veg & Non Veg",id:"Noodles",items:[["Veg Noodles",90],["Veg Hakka Noodles",150],["Veg Schezwan Noodles",160],["Veg Singapuri Noodles",170],["Egg Noodles",140],["Chicken Noodles",180]]},
+{name:"Rice / Biryani",id:"Rice",items:[["Plain Rice",100],["Jeera Rice",120],["Veg Fried Rice",160],["Egg Fried Rice",170],["Chicken Fried Rice",190],["Veg Biryani",210],["Chicken Biryani",260]]},
+{name:"Veg Main Course",id:"MainCourse",items:[["Kadhai Paneer",190,270],["Sahi Paneer",180,260],["Paneer Butter Masala",190,270],["Muttar Paneer",180,260],["Paneer Bhurji",220],["Dal Fry",150],["Dal Yellow Tadka",160],["Dal Makhni",220],["Mushroom Masala",220],["Mix Veg",210],["Allu Jeera",150],["Allu Gobhi Masala",180]]},
+{name:"Non Veg Main Course",id:"NonVeg",items:[["Butter Chicken",270,370],["Kadhai Chicken",260,360],["Chicken Masala",230,350]]},
+{name:"Tawa Roti / Tandoor Roti",id:"Bread",items:[["Tawa Roti",10],["Tawa Butter Roti",15],["Tandoori Roti",15],["Tandoori Butter Roti",20],["Butter Naan",40]]},
+{name:"Salad / Papad",id:"Salad",items:[["Green Salad",70],["Papad (2 pcs)",40],["Mix Raita",80]]},
+{name:"Dessert",id:"Dessert",items:[["Vanilla Ice Cream",50],["Butter Scotch",60]]},
+{name:"Manchurian",id:"Manchurian",items:[["Veg Manchurian",150],["Non Veg Manchurian",180]]}
 ];
 
 let cart=[];
+let locationVerified=false;
 const RESTAURANT_LAT=30.2592757;
 const RESTAURANT_LON=78.1492988;
 const ORDER_RADIUS_METRES=75;
 const grid=document.getElementById("menuGrid");
 
 function distanceMetres(lat1,lon1,lat2,lon2){
-  const R=6371000;
-  const rad=d=>d*Math.PI/180;
-  const dLat=rad(lat2-lat1),dLon=rad(lon2-lon1);
-  const a=Math.sin(dLat/2)**2+
-    Math.cos(rad(lat1))*Math.cos(rad(lat2))*Math.sin(dLon/2)**2;
+  const R=6371000, rad=d=>d*Math.PI/180;
+  const dLat=rad(lat2-lat1), dLon=rad(lon2-lon1);
+  const a=Math.sin(dLat/2)**2+Math.cos(rad(lat1))*Math.cos(rad(lat2))*Math.sin(dLon/2)**2;
   return 2*R*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
 }
-
+let selectedCategory="all";
+function categoryMatches(category, filter){
+  if(filter==="all") return true;
+  if(filter==="Starter") return category.id==="StarterVeg" || category.id==="StarterNonVeg";
+  return category.id===filter;
+}
 function renderMenu(filter=""){
-  grid.innerHTML="";
-  let shown=0;
-
+  grid.innerHTML="";let shown=0;
   menu.forEach(category=>{
-    const items=category.items.filter(item=>
-      (category.name+" "+item[0]).toLowerCase().includes(filter.toLowerCase())
-    );
-    if(!items.length)return;
-    shown++;
-
-    const card=document.createElement("section");
-    card.className="menu-card";
-    card.id=category.id;
-
-    const heading=document.createElement("div");
-    heading.className="menu-heading";
-    heading.textContent=category.name;
-    card.appendChild(heading);
-
+    if(!categoryMatches(category, selectedCategory)) return;
+    const items=category.items.filter(item=>(category.name+" "+item[0]).toLowerCase().includes(filter.toLowerCase()));
+    if(!items.length)return;shown++;
+    const card=document.createElement("section");card.className="menu-card";card.id=category.id;
+    const heading=document.createElement("div");heading.className="menu-heading";heading.textContent=category.name;card.appendChild(heading);
     items.forEach(item=>{
-      const row=document.createElement("div");
-      row.className="menu-item";
-
-      const left=document.createElement("div");
-      const name=document.createElement("div");
-      name.className="item-name";
-      name.textContent=item[0];
-      left.appendChild(name);
-
-      const controls=document.createElement("div");
-      controls.className="item-controls";
-
+      const row=document.createElement("div");row.className="menu-item";
+      const left=document.createElement("div");const name=document.createElement("div");name.className="item-name";name.textContent=item[0];left.appendChild(name);
+      const controls=document.createElement("div");controls.className="item-controls";
+      let variant="";
       if(item.length===3){
         const select=document.createElement("select");
-        select.innerHTML=
-          `<option value="0">Half ₹${item[1]}</option>
-           <option value="1">Full ₹${item[2]}</option>`;
-        controls.appendChild(select);
+        select.innerHTML=`<option value="0">Half ₹${item[1]}</option><option value="1">Full ₹${item[2]}</option>`;
+        controls.appendChild(select);variant="Half";
       }
-
-      const priceText=document.createElement("span");
-      priceText.className="item-price";
-      priceText.textContent="₹"+item[1];
-
-      if(item.length===3){
-        controls.querySelector("select").addEventListener("change",e=>{
-          priceText.textContent="₹"+item[Number(e.target.value)+1];
-        });
-      }
-
-      const add=document.createElement("button");
-      add.className="add-btn";
-      add.textContent="+ Add";
+      const priceText=document.createElement("span");priceText.className="item-price";priceText.textContent="₹"+item[1];
+      if(item.length===3)controls.querySelector("select").addEventListener("change",e=>priceText.textContent="₹"+item[Number(e.target.value)+1]);
+      const add=document.createElement("button");add.className="add-btn";add.textContent="+ Add";
       add.onclick=()=>{
-        const select=controls.querySelector("select");
-        const index=select?Number(select.value)+1:1;
-        const variant=select?(select.value==="0"?"Half":"Full"):"";
-        addItem(item[0],item[index],variant);
+        const sel=controls.querySelector("select");
+        const idx=sel?Number(sel.value)+1:1;
+        addItem(item[0],item[idx],sel?(sel.value==="0"?"Half":"Full"):"");
       };
-
-      controls.append(priceText,add);
-      left.appendChild(controls);
-      row.appendChild(left);
-      card.appendChild(row);
+      controls.append(priceText,add);left.appendChild(controls);row.appendChild(left);card.appendChild(row);
     });
-
     grid.appendChild(card);
   });
-
-  if(!shown)grid.innerHTML='<p class="empty">No matching items found.</p>';
+  if(!shown)grid.innerHTML='<p class="empty">No matching items found in this category.</p>';
 }
+document.getElementById("categoryNav").addEventListener("click",event=>{
+  const button=event.target.closest("button[data-filter]");if(!button)return;
+  selectedCategory=button.dataset.filter;
+  document.querySelectorAll("#categoryNav button").forEach(b=>b.classList.toggle("active",b===button));
+  renderMenu(document.getElementById("search").value.trim());
+});
+document.getElementById("search").addEventListener("input",event=>renderMenu(event.target.value.trim()));
 
 function addItem(name,price,variant=""){
-  const key=name+"|"+variant;
-  const existing=cart.find(item=>item.key===key);
-  if(existing)existing.qty++;
-  else cart.push({key,name,price,variant,qty:1});
-  renderCart();
+  const key=name+"|"+variant;const existing=cart.find(i=>i.key===key);
+  if(existing)existing.qty++;else cart.push({key,name,price,variant,qty:1});renderCart();
 }
-
 function renderCart(){
-  const box=document.getElementById("cartItems");
-  box.innerHTML="";
-  let count=0,total=0;
-
-  if(!cart.length){
-    box.innerHTML='<p class="empty">Your cart is empty. Add something delicious!</p>';
-  }
-
+  const box=document.getElementById("cartItems");box.innerHTML="";let count=0,total=0;
+  if(!cart.length)box.innerHTML='<p class="empty">Your cart is empty. Add something delicious!</p>';
   cart.forEach(item=>{
-    count+=item.qty;
-    total+=item.price*item.qty;
-
-    const row=document.createElement("div");
-    row.className="cart-row";
-
-    const details=document.createElement("div");
-    const title=document.createElement("strong");
+    count+=item.qty;total+=item.price*item.qty;
+    const row=document.createElement("div");row.className="cart-row";
+    const details=document.createElement("div");const title=document.createElement("strong");
     title.textContent=item.name+(item.variant?" ("+item.variant+")":"");
-
-    const amount=document.createElement("div");
-    amount.style.color="var(--gold)";
-    amount.style.marginTop="5px";
-    amount.textContent="₹"+item.price+" × "+item.qty;
-    details.append(title,amount);
-
-    const qty=document.createElement("div");
-    qty.className="qty";
-
-    const minus=document.createElement("button");
-    minus.textContent="−";
-    minus.onclick=()=>changeQty(item.key,-1);
-
-    const number=document.createElement("span");
-    number.textContent=item.qty;
-
-    const plus=document.createElement("button");
-    plus.textContent="+";
-    plus.onclick=()=>changeQty(item.key,1);
-
-    qty.append(minus,number,plus);
-    row.append(details,qty);
-    box.appendChild(row);
+    const amount=document.createElement("div");amount.style.color="var(--gold)";amount.style.marginTop="5px";amount.textContent="₹"+item.price+" × "+item.qty;details.append(title,amount);
+    const qty=document.createElement("div");qty.className="qty";
+    const minus=document.createElement("button");minus.textContent="−";minus.onclick=()=>changeQty(item.key,-1);
+    const number=document.createElement("span");number.textContent=item.qty;
+    const plus=document.createElement("button");plus.textContent="+";plus.onclick=()=>changeQty(item.key,1);
+    qty.append(minus,number,plus);row.append(details,qty);box.appendChild(row);
   });
-
-  document.getElementById("cartCount").textContent=count;
-  document.getElementById("total").textContent=total;
+  document.getElementById("cartCount").textContent=count;document.getElementById("total").textContent=total;
 }
-
-function changeQty(key,change){
-  const item=cart.find(i=>i.key===key);
-  if(!item)return;
-  item.qty+=change;
-  if(item.qty<=0)cart=cart.filter(i=>i.key!==key);
-  renderCart();
-}
-
-function openCart(){
-  document.getElementById("cartPanel").classList.add("open");
-}
-function closeCart(){
-  document.getElementById("cartPanel").classList.remove("open");
-}
-function outsideClose(event){
-  if(event.target.id==="cartPanel")closeCart();
-}
-function clearCart(){
-  cart=[];
-  renderCart();
-}
-
+function changeQty(key,change){const item=cart.find(i=>i.key===key);if(!item)return;item.qty+=change;if(item.qty<=0)cart=cart.filter(i=>i.key!==key);renderCart()}
+function openCart(){document.getElementById("cartPanel").classList.add("open")}
+function closeCart(){document.getElementById("cartPanel").classList.remove("open")}
+function outsideClose(e){if(e.target.id==="cartPanel")closeCart()}
+function clearCart(){cart=[];renderCart()}
 function placeOrder(){
   if(!cart.length){
     alert("Please add at least one item to your order.");
@@ -373,7 +253,6 @@ function placeOrder(){
   const table=document.getElementById("table").value.trim();
   const customer=document.getElementById("customer").value.trim();
   const notes=document.getElementById("notes").value.trim();
-
   if(!table){
     alert("Please enter your table number.");
     document.getElementById("table").focus();
@@ -391,32 +270,28 @@ function placeOrder(){
 
   navigator.geolocation.getCurrentPosition(position=>{
     const distance=distanceMetres(
-      position.coords.latitude,
-      position.coords.longitude,
-      RESTAURANT_LAT,
-      RESTAURANT_LON
+      position.coords.latitude, position.coords.longitude,
+      RESTAURANT_LAT, RESTAURANT_LON
     );
     const accuracy=position.coords.accuracy||9999;
-
     if(distance>ORDER_RADIUS_METRES){
+      locationVerified=false;
       checkoutButton.disabled=false;
       checkoutButton.textContent="PLACE ORDER";
       alert("You're about "+Math.round(distance)+" metres away. Orders can only be placed within 75 metres of The Taste Restro.");
       return;
     }
-
     if(accuracy>60){
+      locationVerified=false;
       checkoutButton.disabled=false;
       checkoutButton.textContent="PLACE ORDER";
       alert("Your location accuracy is too low (±"+Math.round(accuracy)+"m). Please enable precise location and try again.");
       return;
     }
 
-    const total=cart.reduce((sum,item)=>sum+item.price*item.qty,0);
-    const lines=cart.map(item=>
-      `${item.name}${item.variant?" ("+item.variant+")":""} x ${item.qty} = ₹${item.price*item.qty}`
-    );
-
+    locationVerified=true;
+    const total=cart.reduce((sum,i)=>sum+i.price*i.qty,0);
+    const lines=cart.map(i=>`${i.name}${i.variant?" ("+i.variant+")":""} x ${i.qty} = ₹${i.price*i.qty}`);
     const message=[
       "THE TASTE RESTRO - NEW ORDER",
       "--------------------------",
@@ -429,73 +304,30 @@ function placeOrder(){
       notes?"Special instructions: "+notes:"",
       "Distance from restaurant: "+Math.round(distance)+" metres",
       "Please confirm this order."
-    ].filter(Boolean).join("\n");
+    ].filter(Boolean).join("\\n");
 
     checkoutButton.disabled=false;
     checkoutButton.textContent="PLACE ORDER";
-
-    // Confirm this is the restaurant's correct WhatsApp number.
-    const phone="916002210776";
-    window.open(
-      "https://wa.me/"+phone+"?text="+encodeURIComponent(message),
-      "_blank"
-    );
+    const phone="916002210776"; // Verify the restaurant WhatsApp number before publishing.
+    window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
   },error=>{
     checkoutButton.disabled=false;
     checkoutButton.textContent="PLACE ORDER";
-
     const messages={
       1:"Location permission was denied. Please allow location access in your browser settings to place an order.",
       2:"Your location is unavailable. Turn on device location services and try again.",
       3:"Location check timed out. Please try again."
     };
     alert(messages[error.code]||"Could not verify your location. Please try again.");
-  },{
-    enableHighAccuracy:true,
-    timeout:15000,
-    maximumAge:0
-  });
+  },{enableHighAccuracy:true,timeout:15000,maximumAge:0});
 }
 
-document.getElementById("search").addEventListener("input",event=>{
-  renderMenu(event.target.value);
-});
+document.getElementById("search").addEventListener("input",e=>renderMenu(e.target.value));
 document.getElementById("year").textContent=new Date().getFullYear();
 
-/* Diwali theme: 18 Oct through 11 Nov 2026, India time. */
-function updateFestivalTheme(){
-  const indiaDate=new Intl.DateTimeFormat("en-CA",{
-    timeZone:"Asia/Kolkata",
-    year:"numeric",
-    month:"2-digit",
-    day:"2-digit"
-  }).format(new Date());
 
-  document.body.classList.toggle(
-    "diwali",
-    indiaDate>="2026-10-18" && indiaDate<="2026-11-11"
-  );
-}
 
-function addSparkles(){
-  const layer=document.getElementById("diwaliLayer");
-  for(let i=0;i<22;i++){
-    const sparkle=document.createElement("span");
-    sparkle.className="sparkle";
-    sparkle.textContent=["✦","✧","•"][i%3];
-    sparkle.style.left=(Math.random()*100)+"%";
-    sparkle.style.animationDuration=(7+Math.random()*9)+"s";
-    sparkle.style.animationDelay=(-Math.random()*12)+"s";
-    sparkle.style.fontSize=(10+Math.random()*13)+"px";
-    layer.appendChild(sparkle);
-  }
-}
-
-/* Important: render menu and cart immediately on page load. */
-renderMenu();
-renderCart();
-updateFestivalTheme();
-addSparkles();
+renderMenu();renderCart();document.getElementById("year").textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
